@@ -55,7 +55,4 @@ def getDynamicIp():
     except socket.error as err:
         print ("Caught exception socket.error :", err)
 
-def updateDdns():
-    try:
-
 main()
