@@ -10,7 +10,7 @@ def main():
 
     if (currentIp != hostIp):
         try:
-            response = requests.get(DdnsUrl).text
+            response = requests.get(DdnsUrl)
         except requests.exceptions.HTTPError as errH:
             print ('Http Error:', errH)
         except requests.exceptions.ConnectionError as errC:
@@ -23,7 +23,7 @@ def main():
         current_time = datetime.now().strftime("[%Y-%m-%d %H:%M:%S]")
          
         if response.status_code == 200:
-            print(current_time, "Successfully updated DDNS:", response)
+            print(current_time, "Successfully updated DDNS:", response.text)
         else:
             print(current_time, "Failed updated DDNS")
 
