@@ -2,7 +2,7 @@ import requests, socket, datetime
 from datetime import datetime
 
 homeUrl = "" #cPanels DDNS subdomain
-DdnsUrl = "" #cPanels DDNS Url
+ddnsUrl = "" #cPanels DDNS Url
 
 def main():
     currentIp = getCurrentIp()
@@ -10,7 +10,7 @@ def main():
 
     if (currentIp != hostIp):
         try:
-            response = requests.get(DdnsUrl)
+            response = requests.get(ddnsUrl)
         except requests.exceptions.HTTPError as errH:
             print ('Http Error:', errH)
         except requests.exceptions.ConnectionError as errC:
